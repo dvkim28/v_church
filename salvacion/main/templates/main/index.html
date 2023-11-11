@@ -1,84 +1,18 @@
 {% extends 'main/base/base.html' %}
 {% load static %}
+{% load my_custom_form %}
 <html lang="en">
 <body>
 {% block content %}
-<header class="header">
-    <div class="header__content">
-        <div class="header__logo-container">
-            <div class="header__logo-img-cont">
-                <img src="{% static 'assets/png/logo.png' %}"
-                     alt="Ram Maheshwari Logo Image"
-                     class="header__logo-img"
-                />
-            </div>
-            <span class="header__logo-sub">Salvación De Dios</span>
-        </div>
-        <div class="header__main">
-            <ul class="header__links">
-                <li class="header__link-wrapper">
-                    <a href="./index.html" class="header__link"> Home </a>
-                </li>
-                <li class="header__link-wrapper">
-                    <a href="./index.html#about" class="header__link">About </a>
-                </li>
-                <li class="header__link-wrapper">
-                    <a href="./index.html#projects" class="header__link">
-                        Projects
-                    </a>
-                </li>
-                <li class="header__link-wrapper">
-                    <a href="./index.html#contact" class="header__link"> Contact </a>
-                </li>
-            </ul>
-            <div class="header__main-ham-menu-cont">
-                <img
-                        src="{% static 'assets/svg/ham-menu.svg' %}"
-                        alt="hamburger menu"
-                        class="header__main-ham-menu"
-                />
-                <img
-                        src="{% static 'assets/svg/ham-menu-close.svg'%}"
-                        alt="hamburger menu close"
-                        class="header__main-ham-menu-close d-none"
-                />
-            </div>
-        </div>
-    </div>
-    <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-            <ul class="header__sm-menu-links">
-                <li class="header__sm-menu-link">
-                    <a href="./index.html"> Home </a>
-                </li>
-
-                <li class="header__sm-menu-link">
-                    <a href="./index.html#about"> About </a>
-                </li>
-
-                <li class="header__sm-menu-link">
-                    <a href="./index.html#projects"> Projects </a>
-                </li>
-
-                <li class="header__sm-menu-link">
-                    <a href="./index.html#contact"> Contact </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</header>
-<div class="section2">
-</div>
 <section class="home-hero">
     <div class="home-hero__content">
-        <h1 class="heading-primary">Приповісті 3:5-6</h1>
         <div class="home-hero__info">
-            <p class="text-primary"> Надійся на Господа всім своїм серцем, а на розум свій не покладайся! <br>
+            <p class="text-primary"> Надійся на Господа всім своїм серцем, а на розум свій не покладайся!
                 Пізнавай ти Його на всіх дорогах своїх, і Він випростує твої стежки.
             </p>
         </div>
+        <h1 class="heading-primary">Приповісті 3:5-6</h1>
     </div>
-
     <div class="home-hero__mouse-scroll-cont">
         <div class="main_service">
             <div class="general">
@@ -96,45 +30,7 @@
     </div>
     </div>
 </section>
-<section id="projects" class="projects sec-pad">
-    <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-            <span class="heading-sec__main">Наші новини</span>
-            <span class="heading-sec__sub">
-                "Всі новини церкви знайомлять нас з Божим словом та діями вірян.
-                Церква – це спільнота віри, де люди об'єднані служінням Господу та служінням один одному.
-                Тут ми відкриваємо істину, творимо добро та поширюємо любов, долаючи випробування віри.
-                І все це в світлі Біблії та Божої милості."
-            </span>
-        </h2>
-        <div class="projects__content">
-            <div class="projects__row">
-                <div class="projects__row-img-cont">
-                    <img
-                            src="{% static '/assets/jpeg/project-mockup-example.jpeg'%}"
-                            alt="Software Screenshot"
-                            class="projects__row-img"
-                            loading="lazy"
-                    />
-                </div>
-                <div class="projects__row-content">
-                    <h3 class="projects__row-content-title">Project 1</h3>
-                    <p class="projects__row-content-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                        facilis tempora, explicabo quae quod deserunt eius sapiente
-                        praesentium.
-                    </p>
-                    <a
-                            href="./project-1.html"
-                            class="btn btn--med btn--theme dynamicBgClr"
-                            target="_blank"
-                    >Case Study</a
-                    >
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% show_news_list %}
 <section id="about" class="about sec-pad">
     <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-med">
@@ -157,48 +53,18 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
             tempora explicabo quae quod deserunt eius sapiente
           </span>
-        </h2>
-        <div class="contact__form-container">
-            <form action="#" class="contact__form">
-                <div class="contact__form-field">
-                    <label class="contact__form-label" for="name">Name</label>
-                    <input
-                            required
-                            placeholder="Enter Your Name"
-                            type="text"
-                            class="contact__form-input"
-                            name="name"
-                            id="name"
-                    />
-                </div>
-                <div class="contact__form-field">
-                    <label class="contact__form-label" for="email">Email</label>
-                    <input
-                            required
-                            placeholder="Enter Your Email"
-                            type="text"
-                            class="contact__form-input"
-                            name="email"
-                            id="email"
-                    />
-                </div>
-                <div class="contact__form-field">
-                    <label class="contact__form-label" for="message">Message</label>
-                    <textarea
-                            required
-                            cols="30"
-                            rows="10"
-                            class="contact__form-input"
-                            placeholder="Enter Your Message"
-                            name="message"
-                            id="message"
-                    ></textarea>
-                </div>
-                <button type="submit" class="btn btn--theme contact__btn">
-                    Submit
-                </button>
-            </form>
+            <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            {{ form.errors }}
         </div>
+    {% endif %}
+    <button type="submit">Отправить</button>
+</form>
+
+        </h2>
     </div>
 </section>
 {% endblock %}

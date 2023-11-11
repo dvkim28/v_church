@@ -1,0 +1,36 @@
+<section id="projects" class="projects sec-pad">
+    <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-bg">
+            <span class="heading-sec__main">Наші новини</span>
+            <span class="heading-sec__sub">
+                "Всі новини церкви знайомлять нас з Божим словом та діями вірян.
+                Церква – це спільнота віри, де люди об'єднані служінням Господу та служінням один одному.
+                Тут ми відкриваємо істину, творимо добро та поширюємо любов, долаючи випробування віри.
+                І все це в світлі Біблії та Божої милості."
+            </span>
+        </h2>
+        <div class="projects__content">
+            {% for article in articles|slice:":2" %}
+            <div class="projects__row">
+                <div class="projects__row-img-cont">
+                    <img src="{{ article.img.url }}" alt="{{ article.title }}"
+                         alt="Project Image"
+                         class="project-details__showcase-img"
+                    />
+                </div>
+                <div class="projects__row-content">
+                    <h3 class="projects__row-content-title">{{article.title}}</h3>
+                    <p class="projects__row-content-desc">
+                        {{article.short_description}}
+                    </p>
+                    <a href="{% url 'post_view' slug=article.slug %}"
+                       class="btn btn--med btn--theme dynamicBgClr"
+                    >Детальніше</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <nav aria-label="Page navigation example">
+        </nav>
+    </div>
+</section>
