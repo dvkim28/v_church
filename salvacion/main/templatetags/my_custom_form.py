@@ -6,5 +6,5 @@ register = template.Library()
 
 @register.inclusion_tag('main/base/list_news_tag.html')
 def show_news_list():
-    articles = Article.objects.all()  # Получаем все статьи
+    articles = Article.objects.all().order_by('-id')
     return {'articles': articles}
