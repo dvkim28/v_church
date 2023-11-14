@@ -9,6 +9,7 @@ class Article(models.Model):
     short_description = models.TextField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     img = models.ImageField(blank=True, null=True)
+    date = models.DateField(auto_now=True)
     def __str__(self):
         return self.title
 

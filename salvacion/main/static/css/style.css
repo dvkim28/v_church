@@ -478,7 +478,7 @@ background-size: cover;  display:flex;
     text-align: center; }
 
 .project-details__content {
-  padding: 8rem 0;
+  padding: 2rem 0;
   max-width: 90rem;
   margin: auto; }
   .project-details__content-title {
@@ -491,7 +491,7 @@ background-size: cover;  display:flex;
 
 .project-details__showcase-img-cont {
   width: 100%;
-  margin-bottom: 6rem; }
+ }
 
 .project-details__showcase-img {
   width: 100%; }
@@ -499,12 +499,41 @@ background-size: cover;  display:flex;
 .project-details__content-main {
   width: 100%;
   max-width: 70rem;
-  margin: auto; }
+  margin: auto;
+ }
+ .project-details__content-main_lv {
+  width: 100%;
+  margin: auto;
+  font-size: 4rem;
+ }
+
+ .pagination_lv{
+ height:40px;
+ display: flex;
+ justify-content: center;
+ font-size:2rem;
+  }
+ .pagination_lv> a{
+   font-size: 20px;
+  }
+.date_lv{
+text-align:right;
+font-size: 1.5rem;
+    color: grey;
+}
 
 .project-details__desc {
   margin: 0 0 7rem 0; }
   .project-details__desc-para {
     font-size: 1.8rem;
+    line-height: 1.7;
+    color: grey;
+    margin-bottom: 2rem; }
+
+    .project-details__desc_lv {
+  margin: 0 0 7rem 0; }
+  .project-details__desc-para_lv {
+    font-size: 2rem;
     line-height: 1.7;
     color: grey;
     margin-bottom: 2rem; }
