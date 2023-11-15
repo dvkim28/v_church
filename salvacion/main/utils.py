@@ -1,3 +1,5 @@
+import requests
+
 cyrillic_letters = {
         u'а': u'a',
         u'б': u'b',
@@ -40,3 +42,11 @@ def from_cyrillic_to_eng(text:str):
         for ch in text:
             tmp += cyrillic_letters.get(ch,ch)
         return tmp
+
+def send_telegram_bot(message):
+        token = '6870482109:AAEB4ZcV0fnXoVaqyKrOG3n_NJvAZnr45ws'
+        chat_id = '826544103'
+        url = f'https://api.telegram.org/bot{token}/sendMessage'
+        data = {'chat_id': chat_id, 'text': message}
+        response = requests.post(url, data=data)
+        return response.ok

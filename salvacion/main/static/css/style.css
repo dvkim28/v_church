@@ -342,7 +342,7 @@ background-repeat: no-repeat;  height: 600vh;
   .projects__row-content {
     padding: 2rem 0;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     align-items: flex-start; }
     @media only screen and (max-width: 56.25em) {
@@ -351,16 +351,17 @@ background-repeat: no-repeat;  height: 600vh;
     .projects__row-content-title {
       font-weight: 700;
       font-size: 2.8rem;
-      margin-bottom: 2rem; }
+ }
       @media only screen and (max-width: 37.5em) {
         .projects__row-content-title {
           font-size: 2.4rem; } }
     .projects__row-content-desc {
       font-size: 1.8rem;
       color: grey;
+      color: grey;
       max-width: 60rem;
       line-height: 1.7;
-      margin-bottom: 3rem; }
+  }
       @media only screen and (max-width: 37.5em) {
         .projects__row-content-desc {
           font-size: 1.7rem; } }
@@ -520,6 +521,11 @@ background-size: cover;  display:flex;
 text-align:right;
 font-size: 1.5rem;
     color: grey;
+}.date_lv_main{
+width: 100%;
+text-align:left;
+font-size: 1.5rem;
+    color: black;
 }
 
 .project-details__desc {
