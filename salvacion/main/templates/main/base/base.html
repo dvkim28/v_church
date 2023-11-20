@@ -1,5 +1,7 @@
 {% load static %}
 {% load my_custom_form %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +18,12 @@
     <title>{%block head%}{%endblock%}</title>
 </head>
 <body>
-
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
     <li {% if message.tags %} class="{{ message.tags }}, list-group-item" {% endif %}>
         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
         <div class="alert alert-success" role="alert">{{ message }}</div>
-
     </li>
     {% endfor %}
 </ul>
@@ -40,16 +40,30 @@
                     <a href="{% url 'homepage'%}" class="header__link"> Головна </a>
                 </li>
                 <li class="header__link-wrapper">
-                    <a href="{% url 'homepage' %}/about" class="header__link">Про церкву </a>
+                    <a href="{% url 'history' %}" class="header__link">Про церкву </a>
                 </li>
                 <li class="header__link-wrapper">
                     <a href="{% url 'list_view'%}" class="header__link">
                         Новини
                     </a>
                 </li>
-                <li class="header__link-wrapper">
-                    <a href="{% url 'homepage'%}/>contact" class="header__link"> Контакти </a>
-                </li>
+                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go">
+</form>
+
+    </select>
+
             </ul>
             <div class="header__main-ham-menu-cont">
                 <img
@@ -97,7 +111,6 @@
                 </p>
             </div>
         </div>
-
         <div class="main-footer__lower">
             &copy; Copyright 2023
             <a rel="noreferrer" target="_blank" href="#"
@@ -105,7 +118,6 @@
             >
         </div>
     </div>
-
 </footer>
 </body>
 </html>

@@ -37,3 +37,8 @@ class AllNewsView(ListView):
 
     def get_queryset(self):
         return Article.objects.all().order_by('-id')
+
+def HistoryView(request):
+    text = "this is some random text"
+    context = {'text': text}
+    return render(request, 'main/history.html', context)

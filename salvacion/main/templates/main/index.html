@@ -1,28 +1,32 @@
 {% extends 'main/base/base.html' %}
 {% load static %}
 {% load my_custom_form %}
+{% load i18n %}
+
 <html lang="en">
 <body>
 {% block content %}
 <section class="home-hero">
     <div class="home-hero__content">
         <div class="home-hero__info">
-            <p class="text-primary_main"> Надійся на Господа всім своїм серцем, а на розум свій не покладайся!
+            <p class="text-primary_main">{% blocktrans %}
+                Надійся на Господа всім своїм серцем, а на розум свій не покладайся!
                 Пізнавай ти Його на всіх дорогах своїх, і Він випростує твої стежки.
+                {% endblocktrans %}
             </p>
         </div>
-        <h1 class="heading-primary">Приповісті 3:5-6</h1>
+        <h1 class="heading-primary">{% blocktrans %}Приповісті 3:5-6 {% endblocktrans %}</h1>
     </div>
     <div class="home-hero__mouse-scroll-cont">
         <div class="main_service">
             <div class="general">
-                <div class="title">Недільне служіння</div>
+                <div class="title">{% blocktrans %} Недільне служіння {% endblocktrans %}</div>
                 <div class="time_general">11:00</div>
                 <div class="location_general">Av. de Burjassot, 83, 46009 València, Valencia</div>
             </div>
             <div class="border"></div>
             <div class="home_service">
-                <div class="title">Домашня група</div>
+                <div class="title">{% blocktrans %}Домашня група {% endblocktrans %}</div>
                 <div class="time_general">19:00</div>
                 <div class="location_general">Calle Ministro Luis Mayans 31 puerta 11</div>
             </div>
@@ -34,13 +38,15 @@
 <section id="about" class="about sec-pad">
     <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-med">
-            <span class="heading-sec__main">Про церкву</span>
+            <span class="heading-sec__main">{% blocktrans %}Про церкву{% endblocktrans %}</span>
             <span class="heading-sec__sub">
+                {% blocktrans %}
                 Українська церква у Валенсії <br>
                 Ми - християнська церква, яка вірує в Ісуса Христа як нашого Господа і Спасителя.
                 Як об'єднання віруючих, ми покладаємо віру в незмінну істину Біблії,
                 прагнемо до стійких міжособистісних стосунків, підтримуємо щедру духовну жертовність,
                 відкрито проповідуємо Боже слово і практикуємо нескінчену молитву.
+                {% endblocktrans %}
             </span>
         </h2>
     </div>
@@ -48,29 +54,31 @@
 <section id="contact" class="contact sec-pad dynamicBg">
     <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-med">
-            <span class="heading-sec__main heading-sec__main--lt">Contact</span>
+            <span class="heading-sec__main heading-sec__main--lt">{% blocktrans %} Contact {% endblocktrans %}</span>
             <span class="heading-sec__sub heading-sec__sub--lt">
+                {% blocktrans %}
             Якщо ви шукаєте духовної підтримки, бажаєте попросити про молитву, або маєте будь-які інші запитання чи потреби, будь ласка, напишіть нам. Ми відкриті до вашого звернення і готові допомогти вам у цей час.
               Ми обіцяємо зберігати конфіденційність вашого звернення і відповісти вам якнайшвидше.
                 Нехай Господь благословить вас!
+                {% endblocktrans %}
           </span>
         </h2>
         <div class="contact__form-container">
             <form action="#" class="contact__form" method="post">
                 {% csrf_token %}
                 <div class="contact__form-field">
-                    <label class="contact__form-label" for="name">Імʼя</label>
+                    <label class="contact__form-label" for="name">{% blocktrans %}Імʼя{% endblocktrans %}</label>
                     {{ form.name }}
                 </div>
                 <div class="contact__form-field">
-                    <label class="contact__form-label" for="number">Номер телефону</label>
+                    <label class="contact__form-label" for="number"> {% blocktrans %} Номер телефону {% endblocktrans %}</label>
                     {{ form.number }}
                 </div>
                 <div class="contact__form-field">
-                    <label class="contact__form-label" for="message">Повідомлення</label>
+                    <label class="contact__form-label" for="message"> {% blocktrans %}Повідомлення {% endblocktrans %}</label>
                     {{ form.message }}
                 </div>
-                <button type="submit" class="btn btn--theme contact__btn">Відправити</button>
+                <button type="submit" class="btn btn--theme contact__btn">{% blocktrans %} Відправити {% endblocktrans %}</button>
             </form>
 
         </div>
