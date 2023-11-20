@@ -75,7 +75,7 @@ font-family: roboto;
   text-align: center; }
   @media only screen and (max-width: 37.5em) {
     .heading-primary {
-      font-size: 5rem; } }
+      font-size: 2rem; } }
 
 .heading-sec__mb-bg {
   margin-bottom: 11rem; }
@@ -184,7 +184,9 @@ font-family: roboto;
   line-height: 1.6; }
   @media only screen and (max-width: 37.5em) {
     .text-primary {
-      font-size: 2rem; } }
+      font-size: 2rem;
+      display:none;
+      } }
 
 .d-none {
   display: none; }
@@ -235,6 +237,14 @@ background-repeat: no-repeat;  height: 600vh;
   max-height: 75rem;
   position: relative; }
   @media only screen and (max-width: 37.5em) {
+
+  .text-primary_main, .heading-primary{
+  display: none;}
+  .main_service{
+  display: flex;
+    item-align: center;
+    flex-direction: column;
+  }
     .home-hero {
       height: unset;
       min-height: unset; } }
@@ -247,6 +257,7 @@ background-repeat: no-repeat;  height: 600vh;
     @media only screen and (max-width: 56.25em) {
       .home-hero__socials {
         display: none; } }
+
   .home-hero__mouse-scroll-cont {
     position: absolute;
     bottom: 3%;
@@ -254,7 +265,9 @@ background-repeat: no-repeat;  height: 600vh;
     transform: translateX(-50%); }
     @media only screen and (max-width: 37.5em) {
       .home-hero__mouse-scroll-cont {
-        display: none; } }
+
+      }
+  }
   .home-hero__social {
     width: 5rem; }
   .home-hero__social-icon-link {
@@ -273,14 +286,17 @@ background-repeat: no-repeat;  height: 600vh;
     position: absolute;
     top: 50%;
     left: 50%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
     transform: translate(-50%, -50%);
     max-width: 90rem;
     width: 92%; }
     @media only screen and (max-width: 37.5em) {
       .home-hero__content {
-        padding: 19rem 0 13rem 0;
         margin: auto;
         position: static;
+        height: 50vh;
         transform: translate(0, 0); } }
   .home-hero__info {
     margin: 3rem auto 0 auto;
@@ -576,7 +592,6 @@ font-size: 1.5rem;
           margin: 0; } }
 
 .header {
-  position: fixed;
   width: 100%;
   z-index: 1000;
   background: #000;

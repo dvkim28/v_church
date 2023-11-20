@@ -1,7 +1,9 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
+
 from .models import Article, Feedback
 
-class ArticleAdmin(admin.ModelAdmin):
+class ArticleAdmin(TranslationAdmin):
     list_display = ['title', 'slug', 'description']
     # Дополнительные настройки админ-класса для модели Article
 

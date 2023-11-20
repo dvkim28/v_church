@@ -4,12 +4,15 @@ from . import views
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from .views import HomeViewForm, ArticleDetailView, AllNewsView
+from .views import HomeViewForm, ArticleDetailView, AllNewsView, HistoryView
 
 urlpatterns = [
     path('', HomeViewForm.as_view(), name='homepage'),
+    path('history/', HistoryView, name='history'),  # Assuming HistoryView is a class-based view
     path('news/<slug:slug>/', ArticleDetailView.as_view(), name='post_view'),
     path('all_news/', AllNewsView.as_view(), name='list_view'),
 ]
+
+# Static files and media files URL patterns
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
