@@ -2,40 +2,34 @@
 {% load static %}
 {% block head %}{{article.title}}{% endblock %}
 {% block content %}
- <section class="project-cs-hero">
-      <div class="project-cs-hero__content">
-        <h1 class="heading-primary">{{article.title}}</h1>
-        <div class="project-cs-hero__info">
-          <p class="text-primary">
-                {{article.short_description}}
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="project-details">
-      <div class="main-container">
-        <div class="project-details__content">
-          <div class="project-details__showcase-img-cont">
-              <img src="{{ article.img.url }}" alt="{{ article.title }}"
-              alt="Project Image"
-              class="project-details__showcase-img"
-            />
-          </div>
-          <div class="project-details__content-main">
-            <div class="project-details__desc">
-              <h3 class="project-details__content-title">Детальніше</h3>
-              <p class="project-details__desc-para">
-                {{article.description}}
-              </p>
-              <p class="project-details__desc-para">
-                {{post.title}}
+{% load i18n %}
 
-              </p>
+<section class="project-details">
+    <div class="main-container">
+        <div class="project-details__content">
+            <div class="project-details__showcase-img-cont">
+                <p class="date_lv">{{article.date|date:"j F Y"}}</p>
+
+                <img src="{{ article.img.url }}" alt="{{ article.title }}"
+                     alt="Project Image"
+                     class="project-details__showcase-img"
+                />
             </div>
-          </div>
+            <div class="project-details__content-main">
+                <div class="project-details__desc">
+                    <h3 class="project-details__content-title">{{article.title}}</h3>
+
+                    <p class="project-details__desc-para">
+                        {{article.description}}
+                    </p>
+                    <p class="project-details__desc-para">
+                        {{post.title}}
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
-  </body>
+</body>
 

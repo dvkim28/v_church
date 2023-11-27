@@ -10,7 +10,8 @@ urlpatterns = [
     path('', HomeViewForm.as_view(), name='homepage'),
     path('history/', HistoryView, name='history'),  # Assuming HistoryView is a class-based view
     path('news/<slug:slug>/', ArticleDetailView.as_view(), name='post_view'),
-    path('all_news/', AllNewsView.as_view(), name='list_view'),
+    path('news/', AllNewsView.as_view(), name='list_view'),
+    path('contact/', AllNewsView.as_view(), name='contacts'),
 ]
 
 # Static files and media files URL patterns

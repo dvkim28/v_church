@@ -19,11 +19,6 @@ Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only
   padding: 0;
   box-sizing: inherit;
   font-family: inherit; }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 html {
   font-size: 62.5%;
@@ -67,15 +62,38 @@ button {
 textarea {
   resize: none; }
 
-.heading-primary {
-font-family: roboto;
-  font-size: 1rem;
+.heading-primary_lv {
+  font-size: 2rem;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center; }
   @media only screen and (max-width: 37.5em) {
     .heading-primary {
-      font-size: 2rem; } }
+      color: white;
+      font-size: 3rem; } }
+
+.heading-primary {
+  font-size: 2rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center; }
+  @media only screen and (max-width: 37.5em) {
+    .heading-primary {
+      color: white;
+
+      font-size: 4.5rem; } }
+.heading-primary_main {
+  font-size: 3rem;
+    color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center; }
+  @media only screen and (max-width: 37.5em) {
+    .heading-primary {
+      color: white;
+      font-size: 3rem; } }
 
 .heading-sec__mb-bg {
   margin-bottom: 11rem; }
@@ -142,6 +160,22 @@ font-family: roboto;
   margin: auto;
   width: 92%; }
 
+/* Увеличение отступа между элементами навигации */
+.navbar-nav .nav-item {
+    margin-right: 15px; /* или любое другое значение, которое вам подходит */
+}
+
+.navbar-nav .nav-link {
+    min-width: 120px; /* Увеличьте это значение по мере необходимости */
+}
+.flag-icon {
+    width: 20px; /* Увеличивает ширину флажка */
+    height: 30px; /* Увеличивает высоту флажка */
+    font-size: 20px; /* Увеличивает размер шрифта для шрифтовых иконок, если они используются */
+}
+
+
+
 .btn {
   background: #fff;
   color: #333;
@@ -176,59 +210,96 @@ font-family: roboto;
     .sec-pad {
       padding: 8rem 0; } }
 
-.text-primary_main {
-  color: #fff;
-  font-size: 3.2rem;
+.text-primary_lv {
+  color: white;
+  font-size: 1.9rem;
   text-align: center;
   width: 100%;
   line-height: 1.6; }
   @media only screen and (max-width: 37.5em) {
     .text-primary {
-      font-size: 2rem;
-      display:none;
-      } }
+      font-size: 1.9rem; } }
+
+.text-primary {
+  color: white;
+  font-size: 2.2rem;
+  text-align: center;
+  width: 100%;
+  line-height: 1.6; }
+  @media only screen and (max-width: 37.5em) {
+    .text-primary {
+      font-size: 2rem; } }
+
+.text-primary_main {
+  color: #fff;
+  font-size: 2.2rem;
+  text-align: center;
+  width: 100%;
+  line-height: 1.6; }
+  @media only screen and (max-width: 37.5em) {
+    .text-primary {
+      font-size: 2rem; } }
 
 .d-none {
   display: none; }
 
-.main_service{
-width: 750px;
-height:100px;
-justify-content: space-around;
-display: flex}
-
-.general{
-text-align: center;
+.title, .time_general{
+  font-size: 2rem;
 }
-.home_service{
-text-align: center;
-
-}
-
-.border{
-height: 80%;
-width: 1px;
-opacity: 0.6;
-background-color: white;
-}
-.title{
-font-size:24px}
-
-.time_general{
-font-size: 16px;}
-
 .location_general{
-text-align: center;
-font-size: 16px;}
-
-
-.title_service{
-background-color: white;
-color: red;
-font-size: 1px;
+  font-size: 2.2rem;
 }
+
+.main_service{
+display:flex;
+justify-content: space-between;
+
+
+
+}
+.navbar {
+    height: 70px; /* Пример фиксированной высоты */
+}
+
+
+.navbar-brand, .navbar-nav .nav-link {
+    font-size: 2rem; /* Увеличенный размер шрифта */
+}
+.navbar-collapse {
+text-align: center;
+}
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: white;
+    }
+}
+
+.language-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+@media (min-width: 600px) and (max-width: 992px) {
+.main_service{
+display:flex;
+flex-direction: column;
+}
+}
+
+
+
+
+/* Для заголовков в выпадающем меню */
+.navbar-nav .dropdown-menu a {
+    font-size: 1rem; /* Размер шрифта для элементов выпадающего меню */
+}
+
 .home-hero {
 color: #fff;
+    font-family: roboto;
 background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url("/main/static/assets/jpeg/bg.webp");
 background-size: cover;
 background-position: top;
@@ -237,14 +308,6 @@ background-repeat: no-repeat;  height: 600vh;
   max-height: 75rem;
   position: relative; }
   @media only screen and (max-width: 37.5em) {
-
-  .text-primary_main, .heading-primary{
-  display: none;}
-  .main_service{
-  display: flex;
-    item-align: center;
-    flex-direction: column;
-  }
     .home-hero {
       height: unset;
       min-height: unset; } }
@@ -262,12 +325,10 @@ background-repeat: no-repeat;  height: 600vh;
     position: absolute;
     bottom: 3%;
     left: 50%;
+    max-width: 90rem;
+    width: 92%;
     transform: translateX(-50%); }
-    @media only screen and (max-width: 37.5em) {
-      .home-hero__mouse-scroll-cont {
-
-      }
-  }
+    @media only screen and (max-width: 37.5em)
   .home-hero__social {
     width: 5rem; }
   .home-hero__social-icon-link {
@@ -286,18 +347,35 @@ background-repeat: no-repeat;  height: 600vh;
     position: absolute;
     top: 50%;
     left: 50%;
-    display:flex;
-    align-items: center;
-    flex-direction: column;
     transform: translate(-50%, -50%);
     max-width: 90rem;
     width: 92%; }
     @media only screen and (max-width: 37.5em) {
+    .home_service, .general {
+    text-align: center;}
       .home-hero__content {
+        padding: 5rem 0 13rem 0;
         margin: auto;
         position: static;
-        height: 50vh;
-        transform: translate(0, 0); } }
+        transform: translate(0, 0); }
+       .text-primary_main, .heading-primary, .border {
+       display:none; }
+       .home-hero__mouse-scroll-cont{
+}
+.date_lv{
+font-size: 1.9rem;
+}
+
+.main_service{
+display: flex;
+flex-direction: column
+align-items-center; }
+
+.home-hero__mouse-scroll-cont {
+    display: flex;
+    align-items: center;
+}
+       }
   .home-hero__info {
     margin: 3rem auto 0 auto;
     max-width: 80rem; }
@@ -358,7 +436,7 @@ background-repeat: no-repeat;  height: 600vh;
   .projects__row-content {
     padding: 2rem 0;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     flex-direction: column;
     align-items: flex-start; }
     @media only screen and (max-width: 56.25em) {
@@ -367,17 +445,16 @@ background-repeat: no-repeat;  height: 600vh;
     .projects__row-content-title {
       font-weight: 700;
       font-size: 2.8rem;
- }
+      margin-bottom: 2rem; }
       @media only screen and (max-width: 37.5em) {
         .projects__row-content-title {
           font-size: 2.4rem; } }
     .projects__row-content-desc {
       font-size: 1.8rem;
       color: grey;
-      color: grey;
       max-width: 60rem;
       line-height: 1.7;
-  }
+      margin-bottom: 3rem; }
       @media only screen and (max-width: 37.5em) {
         .projects__row-content-desc {
           font-size: 1.7rem; } }
@@ -463,31 +540,31 @@ background-repeat: no-repeat;  height: 600vh;
         width: 100%; } }
 
 .project-cs-hero {
+padding-top: 80px;
   color: #fff;
-background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/main/static/assets/jpeg/bg.jpg");
-background-size: cover;  display:flex;
-  align-items: center;
-  height: 400px;
+  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url(../../assets/svg/common-bg.svg);
+  background-size: cover;
+  background-position: center;
   position: relative; }
   @media only screen and (max-width: 37.5em) {
     .project-cs-hero {
-
+      height: unset;
       min-height: unset; } }
   .project-cs-hero__content {
   display:flex;
   flex-direction: column;
-  justify-content: center;
-  font-size: 24px;
+  align-items: center;
     max-width: 90rem;
     width: 92%;
     margin: auto; }
     @media only screen and (max-width: 37.5em) {
       .project-cs-hero__content {
-        padding: 19rem 0 13rem 0;
+        padding: 0rem 0 0rem 0;
         margin: auto;
         position: static;
         transform: translate(0, 0); } }
   .project-cs-hero__info {
+  color:white;
     margin: 3rem auto 0 auto;
     max-width: 80rem; }
   .project-cs-hero__cta {
@@ -495,8 +572,11 @@ background-size: cover;  display:flex;
     text-align: center; }
 
 .project-details__content {
-  padding: 2rem 0;
+  padding: 8rem 0;
   max-width: 90rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: auto; }
   .project-details__content-title {
     font-weight: 700;
@@ -508,54 +588,22 @@ background-size: cover;  display:flex;
 
 .project-details__showcase-img-cont {
   width: 100%;
- }
+  margin-bottom: 6rem; }
 
 .project-details__showcase-img {
   width: 100%; }
 
 .project-details__content-main {
+display:flex;
+justify-content: center;
   width: 100%;
   max-width: 70rem;
-  margin: auto;
- }
- .project-details__content-main_lv {
-  width: 100%;
-  margin: auto;
-  font-size: 4rem;
- }
-
- .pagination_lv{
- height:40px;
- display: flex;
- justify-content: center;
- font-size:2rem;
-  }
- .pagination_lv> a{
-   font-size: 20px;
-  }
-.date_lv{
-text-align:right;
-font-size: 1.5rem;
-    color: grey;
-}.date_lv_main{
-width: 100%;
-text-align:left;
-font-size: 1.5rem;
-    color: black;
-}
+  margin: auto; }
 
 .project-details__desc {
   margin: 0 0 7rem 0; }
   .project-details__desc-para {
     font-size: 1.8rem;
-    line-height: 1.7;
-    color: grey;
-    margin-bottom: 2rem; }
-
-    .project-details__desc_lv {
-  margin: 0 0 7rem 0; }
-  .project-details__desc-para_lv {
-    font-size: 2rem;
     line-height: 1.7;
     color: grey;
     margin-bottom: 2rem; }
@@ -592,6 +640,7 @@ font-size: 1.5rem;
           margin: 0; } }
 
 .header {
+  position: fixed;
   width: 100%;
   z-index: 1000;
   background: #000;
